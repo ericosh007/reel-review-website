@@ -2109,35 +2109,6 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .transformation-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .before-after {
-        flex-direction: column;
-    }
-    
-    .arrow {
-        transform: rotate(90deg);
-    }
-    
-    .timeline-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .industry-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .personas-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* end new customer */
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
     .nav-menu {
         display: none;
     }
@@ -2211,6 +2182,32 @@ body {
     .faq-grid {
         grid-template-columns: 1fr;
     }
+
+     .transformation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .before-after {
+        flex-direction: column;
+    }
+    
+    .arrow {
+        transform: rotate(90deg);
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .personas-grid {
+        grid-template-columns: 1fr;
+    }
+
     
     /* Customers mobile */
     .hero-metrics {
@@ -2243,20 +2240,29 @@ body {
     /* END NEW */
 
 
-
-
-}
-
-
     .checkout-card {
         opacity: 0.3;
         transform: scale(0.95);
         transition: all 0.5s ease;
         filter: grayscale(50%);
-        max-width: 100%;
+        max-width: 400px;
         position: relative;
         box-sizing: border-box;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
+
+    /* Fix checkout flow for mobile */
+    .checkout-flow {
+        display: grid;
+        grid-template-columns: 1fr;  /* Force single column */
+        gap: 32px;
+        max-width: 100%;
+        margin: 0 auto 48px;
+    }
+    
+   
 
     .checkout-card.active {
         opacity: 1;
@@ -2271,6 +2277,14 @@ body {
         -webkit-text-fill-color: transparent;
         font-weight: 700;
     }
+    
+    .checkout-card.active .widget-mockup {
+        animation: pulse-border 2s infinite;
+    }
+
+}
+
+
 
     /* Pulse animation for active step */
     @keyframes pulse-border {
@@ -2285,9 +2299,7 @@ body {
         }
     }
 
-    .checkout-card.active .widget-mockup {
-        animation: pulse-border 2s infinite;
-    }
+
 
     /* Add this to the end of your animation CSS */
     /* .checkout-flow.animation-complete .checkout-card {
