@@ -14,6 +14,7 @@
 /* Publishing Features */
 .publishing-features {
     margin-bottom: 80px;
+    padding: 40px 20px;  
 }
 
 .features-title {
@@ -372,7 +373,7 @@ body {
     border-radius: 24px;
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 0 auto 24px;
 }
 
 .hero-title {
@@ -387,6 +388,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    /* text-align: center; */
+    display: block
 }
 
 .hero-subtitle {
@@ -599,9 +602,16 @@ body {
     margin-bottom: 16px;
 }
 
+ /* Fix feature card titles */
+.feature-detailed h3 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
 .feature-card h3 {
     font-size: 24px;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 .feature-list {
@@ -768,6 +778,7 @@ body {
     text-align: center;
     font-size: 40px;
     margin-bottom: 48px;
+    padding: 0 20px;
 }
 
 .process-flow {
@@ -1047,13 +1058,15 @@ body {
 }
 
 .feature-detailed {
-    padding: 40px 32px;
+    padding: 40px 2px;
+    text-align: left;    /* Keep list items left-aligned */
 }
 
 .feature-icon {
     width: 64px;
     height: 64px;
     font-size: 28px;
+    margin: 0 auto 24px;  /* Center icons */
     margin-bottom: 24px;
     display: flex;
     align-items: center;
@@ -1063,6 +1076,9 @@ body {
 .feature-checklist {
     list-style: none;
     margin-top: 20px;
+    text-align: left;
+    max-width: 280px;
+    margin: 20px auto 0;  
 }
 
 .feature-checklist li {
@@ -1553,12 +1569,15 @@ body {
     margin-bottom: 48px;
 }
 
+/* Main checkout flow - responsive grid */
 .checkout-flow {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns on desktop */
     gap: 24px;
     margin-bottom: 48px;
 }
+
+
 
 .checkout-card {
     position: relative;
@@ -1578,11 +1597,13 @@ body {
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    min-height: 550px;  /* CHANGE from 500px to 550px */
-    height: 550px;      /* CHANGE from 500px to 550px */
+    min-height: 550px;
+    height: auto;  /* Change from fixed height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 100%;  /* Prevent overflow */
+    box-sizing: border-box;  /* Include padding in width */
 }
 
 .widget-mockup h4 {
@@ -2075,6 +2096,15 @@ body {
     color: var(--text-tertiary);
 }
 
+/* Medium screens - switch to vertical */
+@media (max-width: 1000px) and (min-width: 769px) {
+    .checkout-flow {
+        grid-template-columns: 1fr;  /* Stack vertically */
+        max-width: 500px;
+        margin: 0 auto 48px;
+    }
+}
+
 
 
 /* Mobile Responsive */
@@ -2123,6 +2153,7 @@ body {
     
     .hero-title {
         font-size: 40px;
+        text-align: center;
     }
     
     .hero-subtitle {
@@ -2169,6 +2200,7 @@ body {
     
     .product-hero-content {
         text-align: center;
+        padding: 0 20px;     /* Add horizontal padding */
     }
     
     /* Pricing mobile */
@@ -2216,16 +2248,14 @@ body {
 }
 
 
-    /* Checkout Animation Styles - ADD ALL THIS AFTER THE ABOVE CLOSING BRACE */
-    .checkout-flow {
-        position: relative;
-    }
-
     .checkout-card {
         opacity: 0.3;
         transform: scale(0.95);
         transition: all 0.5s ease;
         filter: grayscale(50%);
+        max-width: 100%;
+        position: relative;
+        box-sizing: border-box;
     }
 
     .checkout-card.active {
@@ -2237,7 +2267,7 @@ body {
 
     .checkout-card.active .step-label {
         background: var(--gradient-primary);
-        -webkit-background-clip: text;
+        /* -webkit-background-clip: text; */
         -webkit-text-fill-color: transparent;
         font-weight: 700;
     }
