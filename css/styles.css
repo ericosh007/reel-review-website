@@ -2258,6 +2258,45 @@ body {
         text-align: center !important;
         display: block !important;
     }
+
+    /* publishing features */
+    /* Fix publishing feature cards */
+    .publishing-features {
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+    
+    .publishing-grid-two {
+        grid-template-columns: 1fr !important;  /* Stack vertically on mobile */
+        gap: 20px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .publishing-feature {
+        padding: 30px 20px !important;  /* Reduce padding */
+        text-align: center;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .publishing-feature h4 {
+        font-size: 20px;  /* Slightly smaller */
+        margin-bottom: 12px;
+    }
+    
+    .publishing-feature p {
+        font-size: 14px;  /* Slightly smaller */
+        padding: 0 10px;  /* Add some inner padding */
+    }
+    
+    /* Fix the feature icon if it's too large */
+    .publishing-feature .feature-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        margin: 0 auto 20px;
+    }
     
     /* Pricing Page */
     .pricing-card.featured {
