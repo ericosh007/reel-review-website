@@ -2142,10 +2142,14 @@ body {
     }
     
     .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto 48px;
+        justify-content: center !important;
+        margin: 0 auto 40px !important;
+        padding: 0 20px !important;
+    }
+        /* Fix any container that might be causing the shift */
+    .product-hero .container {
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     /* Fix all h1 tags on product page */
@@ -2186,13 +2190,22 @@ body {
     
     /* Product page mobile */
     .product-hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        display: block !important;  /* Remove grid on mobile */
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .product-hero-content {
-        text-align: center;
-        padding: 0 20px;     /* Add horizontal padding */
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+        /* Center the visual section */
+    .product-hero-visual {
+        margin: 0 auto !important;
+        padding: 20px !important;
+        max-width: 100% !important;
     }
     
     /* Pricing mobile */
