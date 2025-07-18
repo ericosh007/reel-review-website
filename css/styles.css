@@ -506,15 +506,15 @@ body {
 }
 
 .review-card.card-2 {
-    top: 60%;
-    right: 15%;
+    top: 45%;
+    right: 13%;
     animation-delay: 2s;
 }
 
 .review-card.card-3 {
-    bottom: 20%;
-    left: 20%;
-    animation-delay: 4s;
+    bottom: 2%;
+    left: 15%;
+    animation-delay: 1s;
 }
 
 @keyframes float {
