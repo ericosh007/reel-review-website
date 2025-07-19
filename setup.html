@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Guide - Reel Review | Get Started in 5 Minutes</title>
+    <meta name="description" content="Complete setup guide for Reel Review. Start collecting reviews at checkout with our simple installation process.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Additional styles specific to setup page */
+        .setup-hero {
+            background: linear-gradient(135deg, #FFF5F7 0%, #F0F4FF 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .setup-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .step-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E8E8E8;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #7C3AED 50%, #00BCD4 100%);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #7C3AED 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .step-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1A1C1D;
+        }
+        
+        .code-block {
+            background: #1A1C1D;
+            color: #E1E1E1;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .code-block code {
+            color: #E1E1E1;
+        }
+        
+        .warning-box {
+            background: #FFF3CD;
+            border: 1px solid #FFEAA7;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+        
+        .warning-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .pro-tip {
+            background: #E3F2FD;
+            border: 1px solid #90CAF9;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        
+        .pro-tip-title {
+            font-weight: 600;
+            color: #1976D2;
+            margin-bottom: 8px;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .video-placeholder {
+            background: #F5F5F5;
+            border: 2px dashed #DDD;
+            border-radius: 12px;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 24px 0;
+            color: #999;
+        }
+        
+        .help-section {
+            background: #F8F9FA;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+            text-align: center;
+        }
+        
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .help-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .help-icon {
+            font-size: 32px;
+        }
+        
+        .discount-config {
+            background: #F8F9FA;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        .config-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #E8E8E8;
+        }
+        
+        .config-item:last-child {
+            border-bottom: none;
+        }
+        
+        .config-label {
+            font-weight: 600;
+        }
+        
+        .config-value {
+            color: #666;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; ">
+                    <a href="/" class="logo-text-head">
+                        <img src="assets/hooklogo.png" style="width: 30px; height: 30px; margin-right: -5px;" alt="Reel Review Logo">
+                        <span style="font-size: 30px; font-weight: 800; letter-spacing: -1px; margin: 0; background: linear-gradient(90deg, #FF6B35 0%, #FF6B35 25%, #FF1744 35%, #E91E63 45%, #9C27B0 55%, #673AB7 65%, #3F51B5 75%, #2196F3 85%, #00BCD4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block;">reel</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="product.html" class="nav-link">Product</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="customers.html" class="nav-link">Success Stories</a>
+                <a href="#" class="nav-cta">It's Free</a>
+            </div>
+            <div class="nav-mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Setup Hero -->
+    <section class="setup-hero">
+        <div class="container">
+            <h1 class="hero-title gradient-text">Reel Review Setup Guide</h1>
+            <p class="hero-subtitle">Welcome! Let's get you set up in 5 minutes 🎣</p>
+        </div>
+    </section>
+
+    <!-- Setup Content -->
+    <div class="setup-content">
+        <!-- Step 1: Installation -->
+        <div class="step-section">
+            <div class="step-number">1</div>
+            <h2 class="step-title">Installation</h2>
+            <p>Click "Add app" and authorize Reel Review to access your store. We only request necessary permissions.</p>
+        </div>
+
+        <!-- Step 2: Enable Checkout Collection -->
+        <div class="step-section">
+            <div class="step-number">2</div>
+            <h2 class="step-title">Enable Checkout Collection</h2>
+            <ol>
+                <li>Open Apps → Reel Review</li>
+                <li>Click Settings</li>
+                <li>Toggle "Enable Checkout Collection" ON</li>
+                <li>Configure your discount:</li>
+            </ol>
+            
+            <div class="discount-config">
+                <div class="config-item">
+                    <span class="config-label">Type:</span>
+                    <span class="config-value">Percentage (recommended) or Fixed amount</span>
+                </div>
+                <div class="config-item">
+                    <span class="config-label">Value:</span>
+                    <span class="config-value">10% is a sweet spot</span>
+                </div>
+                <div class="config-item">
+                    <span class="config-label">Code:</span>
+                    <span class="config-value">Create a memorable code like THANKS10</span>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <span class="warning-icon">⚠️</span>
+                <div>
+                    <strong>Important:</strong> Create this discount code in your Shopify Discounts first!
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Add Reviews to Product Pages -->
+        <div class="step-section">
+            <div class="step-number">3</div>
+            <h2 class="step-title">Add Reviews to Product Pages</h2>
+            <ol>
+                <li>Go to Online Store → Themes → Customize</li>
+                <li>Navigate to Products → Default product</li>
+                <li>Add section → Custom Liquid</li>
+                <li>Paste this code:</li>
+            </ol>
+            
+            <div class="code-block">
+                <code>&lt;!-- Reel Review Widget --&gt;<br>
+&lt;div id="reel-review-widget" data-product-id="{{ product.id }}"&gt;&lt;/div&gt;<br>
+&lt;script src="https://realreview.onrender.com/js/reviewboost-widget.js" defer&gt;&lt;/script&gt;</code>
+            </div>
+            
+            <ol start="5">
+                <li>Drag section to desired position (usually after product description)</li>
+                <li>Save</li>
+            </ol>
+        </div>
+
+        <!-- Step 4: Customize Your Setup -->
+        <div class="step-section">
+            <div class="step-number">4</div>
+            <h2 class="step-title">Customize Your Setup</h2>
+            
+            <h3 style="margin-top: 24px; margin-bottom: 16px;">Checkout Widget Text</h3>
+            <ul>
+                <li>Main heading: "Your feedback helps others shop with confidence"</li>
+                <li>Button text: "Share Your Experience"</li>
+            </ul>
+            
+            <h3 style="margin-top: 24px; margin-bottom: 16px;">Review Display Options</h3>
+            <ul class="checklist">
+                <li>Show verified badges</li>
+                <li>Display featured reviews first</li>
+                <li>Number of reviews per page</li>
+            </ul>
+        </div>
+
+        <!-- Step 5: Test Everything -->
+        <div class="step-section">
+            <div class="step-number">5</div>
+            <h2 class="step-title">Test Everything</h2>
+            <ol>
+                <li>Place a test order</li>
+                <li>Leave a review at checkout</li>
+                <li>Approve in your admin</li>
+                <li>Check it displays on product page</li>
+            </ol>
+            
+            <div class="pro-tip">
+                <div class="pro-tip-title">Pro Tips 🚀</div>
+                <ul>
+                    <li><strong>Higher conversions:</strong> Offer 10-15% discounts</li>
+                    <li><strong>Better reviews:</strong> Ask immediately at checkout when customers are happiest</li>
+                    <li><strong>Feature great reviews:</strong> Mark 5-star reviews as featured</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="step-section">
+            <h2 class="step-title" style="text-align: center;">Video Walkthrough</h2>
+            <div class="video-placeholder">
+                <p>📹 Video tutorial coming soon</p>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div class="help-section">
+            <h2 class="step-title">Need Help?</h2>
+            <div class="help-grid">
+                <div class="help-item">
+                    <span class="help-icon">📧</span>
+                    <strong>Email</strong>
+                    <a href="mailto:support@reel-review.com">support@reel-review.com</a>
+                </div>
+                <div class="help-item">
+                    <span class="help-icon">📚</span>
+                    <strong>Documentation</strong>
+                    <a href="https://reel-review.com/docs">reel-review.com/docs</a>
+                </div>
+            </div>
+            
+            <p style="margin-top: 32px; font-size: 20px; font-weight: 600;">
+                You're all set! Start collecting reviews in minutes, not weeks 🎉
+            </p>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to reel in more reviews?</h2>
+                <p>Be among the first stores using Reel Review</p>
+                <a href="#" class="btn btn-white">Start for Free</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="logo-text logo-small">
+                    <span>reel</span>
+                </a>
+                <div class="footer-links">
+                    <a href="product.html">Product</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="setup.html">Setup Guide</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2024 Reel Review. Built for Shopify.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileToggle = document.querySelector('.nav-mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
