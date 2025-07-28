@@ -56,6 +56,8 @@
 .review-examples-section {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px; /* ADD THIS - gives breathing room on sides */
+    overflow: visible; /* ADD THIS LINE - prevents clipping */
 }
 
 .examples-title {
@@ -506,12 +508,22 @@ body {
 }
 
 .review-card.card-2 {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
     top: 45%;
-    right: 10%;
+    right: 8%;
     animation-delay: 2s;
 }
 
 .review-card.card-3 {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
     bottom: 2%;
     left: 15%;
     animation-delay: 1s;
@@ -653,6 +665,7 @@ body {
     gap: 24px;
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px; /* ADD THIS LINE - gives space for borders */
 }
 
 .showcase-review {
@@ -670,7 +683,7 @@ body {
 
 .featured-badge {
     position: absolute;
-    top: -12px;
+    top: -14px;
     left: 20px;
     background: var(--orange);
     color: white;
