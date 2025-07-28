@@ -515,7 +515,7 @@ body {
     box-shadow: none !important;
     top: 45%;
     right: 8%;
-    animation-delay: 2s;
+    animation-delay: .5s;
 }
 
 .review-card.card-3 {
