@@ -2,6 +2,8 @@
 
 Landing page for Reel Review, a Shopify app that collects customer reviews at checkout with 98% response rate.
 
+Check it out: https://apps.shopify.com/reel-review
+
 ## Features
 
 - 🎣 Fishing-themed branding ("reel in reviews")
